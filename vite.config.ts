@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 
 export default defineConfig({
-  root: __dirname, // root projektu, kde je index.html
+  root: path.resolve(__dirname, 'client'),
   plugins: [react()],
   build: {
     outDir: path.resolve(__dirname, 'dist/client'),
