@@ -1,8 +1,13 @@
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
+
 export default defineConfig({
-  root: __dirname, // root je přímo projektový root
+  root: path.resolve(__dirname, 'client/src'),
   plugins: [react()],
   build: {
-    outDir: 'dist/client',
+    // po buildu uloží hotové soubory do dist/client
+    outDir: path.resolve(__dirname, 'dist/client'),
     emptyOutDir: true
   },
   resolve: {
@@ -10,5 +15,8 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'client/src'),
       '@shared': path.resolve(__dirname, 'shared')
     }
+  },
+  server: {
+    port: 5173
   }
 })
