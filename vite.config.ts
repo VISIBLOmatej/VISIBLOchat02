@@ -3,10 +3,9 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 
 export default defineConfig({
-  root: path.resolve(__dirname, 'client/src'),
+  root: __dirname, // root projektu, kde je index.html
   plugins: [react()],
   build: {
-    // po buildu uloží hotové soubory do dist/client
     outDir: path.resolve(__dirname, 'dist/client'),
     emptyOutDir: true
   },
